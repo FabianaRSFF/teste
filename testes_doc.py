@@ -14,6 +14,9 @@ def subtrai(x, y):
     '''Subtrai x e y
     >>> subtrai(10, 5) 
     5
+
+    >>> subtrai('10', 5) 
+    5
     '''
     return x - y
 
