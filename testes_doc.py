@@ -9,6 +9,16 @@ def soma(x, y):
     assert isinstance(y, (int, float)), 'y precisa ser int ou float.'
     return x + y 
 
+
+def subtrai(x, y):
+    '''Subtrai x e y
+    >>> subtrai(10, 5) 
+    5
+    '''
+    return x - y
+
+
+
 if __name__== '__main__':
     import doctest
     doctest.testmod()
