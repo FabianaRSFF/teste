@@ -56,7 +56,7 @@ class TestBaconComOvos(unittest.TestCase):
                 )
         
     def test_bacon_com_ovos_deve_retornar_ovos_se_entrada_for_multiplo_de_5(self):
-        entradas = (5, 10, 15, 20, 25)
+        entradas = (5, 10, 20, 25)
         saida = 'Ovos'
 
         for entrada in entradas:
@@ -67,6 +67,6 @@ class TestBaconComOvos(unittest.TestCase):
                 msg = f'{entrada} não retornou {saida}.'
                 )
     
-
-unittest.main(verbosity=2)
+if __name__=='__main__':
+    unittest.main(verbosity=2)
 
