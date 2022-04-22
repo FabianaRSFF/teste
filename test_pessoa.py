@@ -36,19 +36,23 @@ class TestPessoa(unittest.TestCase):
     def test_pessoa_dados_obtidos_inicia_false(self):
         self.assertFalse(self.p1.dados_obtidos)
 
-    def obter_todos_os_dados_sucesso_OK(self):
+    def test_obter_todos_os_dados_sucesso_OK(self):
         with patch('requests.get') as fake_request:
             fake_request.return_value.ok = True
         
             self.assertEqual(self.p1.obter_todos_os_dados(), 'Conectado')
             self.assertTrue(self.p1.dados_obtidos)
 
-    def obter_todos_os_dados_falha_404(self):
+    def test_obter_todos_os_dados_falha_404(self):
         with patch('requests.get') as fake_request:
             fake_request.return_value.ok = False
         
             self.assertEqual(self.p1.obter_todos_os_dados(), 'ERRO 404')
             self.assertFalse(self.p1.dados_obtidos)
+    
+    def test_obter_todos_os_dados_sucesso_e_falha_sequencial(self):
+        with patch('requests.get') as fake_request:
+            fake_request.return_value.ok = True
 
 if __name__=='__main__':
     unittest.main(verbosity=2)
